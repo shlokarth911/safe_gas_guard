@@ -45,6 +45,7 @@ nav {
   height: 3vw;
   overflow: hidden;
   z-index: 999;
+  border: 1px solid #4b4b4b;
 }
 
 nav h4 {
@@ -234,63 +235,111 @@ nav .top button {
 
 .features {
   padding: 0 3.5vw;
+  margin-top: 2vw;
 }
 
-.features h2 {
-  font-size: 3.5vw;
-  font-weight: 500;
+.features h1 {
+  font-size: 5vw;
+  font-weight: 300;
 }
 
-.cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3vw;
+.container {
+  padding: 0vw 5vw;
+}
+
+.drop-line {
+  width: 0.3%;
+  height: 10vw;
+  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    to top,
+    #080808 1%,
+    #ffffff 90%,
+    #080808 1%
+  );
   margin-top: 5vw;
+  margin-bottom: 5vw;
   position: relative;
-}
-
-.card {
-  width: fit-content;
-  border: 1px solid rgb(53, 53, 53);
-  padding: 2vw 2vw;
-  position: relative;
-  border-radius: 1vw;
-  width: 39vw;
-  height: 19vw;
-  box-shadow: 0px 0px 0 rgb(107, 107, 107);
-  transition: all 0.2s;
-}
-
-.card:hover {
-  box-shadow: -10px -10px 0 rgb(255, 255, 255);
-  transform: translate(10px, 10px);
-  border: 1px solid rgb(255, 255, 255);
 }
 
 .card-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1vw;
+  gap: 2vw;
+}
+
+.text-drop-line {
+  display: flex;
+  margin: 5vw 0;
+  gap: 5.5vw;
+  position: relative;
+}
+
+.text-drop-line p {
+  font-size: 3.4vw;
+  font-weight: 300;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.orange {
+  color: #ff6012;
+  text-shadow: 0 0 40px #ff6012;
+}
+
+.blue {
+  color: #128cff;
+  text-shadow: 0 0 40px #128cff;
+}
+
+.green {
+  color: #03df41;
+  text-shadow: 0 0 40px #03df41;
+}
+
+.megenta {
+  color: #d51c80;
+  text-shadow: 0 0 40px #d51c80;
+}
+
+.white {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 40px rgb(255, 255, 255);
+}
+
+.text-drop-line .drop-line {
+  margin: 0;
+  height: 20vw;
+}
+
+.card-header h3 {
+  font-size: 1.7vw;
+  font-weight: 300;
 }
 
 .card-header img {
-  width: 6vw;
+  width: 4vw;
+  transform: translateX(-50%);
 }
 
-.card-header h1 {
-  font-size: 2vw;
-  font-weight: 500;
+.orange-glow {
+  filter: drop-shadow(0 0 20px #ff6012);
 }
 
-.card p {
-  padding-left: 1vw;
-  margin-top: 2vw;
-  font-size: 1.2vw;
-  letter-spacing: 1.5px;
-  line-height: 120%;
+.blue-glow {
+  filter: drop-shadow(0 0 30px #0084ff);
+}
+
+.green-glow {
+  filter: drop-shadow(0 0 30px #00ff48);
+}
+
+.megenta-glow {
+  filter: drop-shadow(0 0 20px #d51c80);
+}
+
+.white-glow {
+  filter: drop-shadow(0 0 20px rgb(255, 255, 255));
 }
 
 .slogan {
