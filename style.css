@@ -13,11 +13,15 @@
   src: url(./PPMori-Regular.woff);
 }
 
+::selection {
+  background-color: #ff6012;
+  color: #000;
+}
+
 html,
 body {
   height: 100%;
   width: 100vw;
-  overflow-x: hidden;
   background-color: #080808;
 }
 
@@ -195,8 +199,11 @@ nav .top button {
 }
 
 .about {
-  margin-top: 12vw;
-  padding: 0 3.5vw;
+  padding: 12vw 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .about h2 {
@@ -209,6 +216,8 @@ nav .top button {
   font-size: 2vw;
   line-height: 120%;
   margin-top: 2vw;
+  color: #9334db;
+  text-shadow: 0 0 40px #9334db;
 }
 
 .about p span {
@@ -235,7 +244,7 @@ nav .top button {
 
 .features {
   padding: 0 3.5vw;
-  margin-top: 2vw;
+  margin-top: 20vw;
 }
 
 .features h1 {
@@ -250,13 +259,7 @@ nav .top button {
 .drop-line {
   width: 0.3%;
   height: 10vw;
-  background-color: rgb(255, 255, 255);
-  background-image: linear-gradient(
-    to top,
-    #080808 1%,
-    #ffffff 90%,
-    #080808 1%
-  );
+  background-color: rgb(114, 114, 114);
   margin-top: 5vw;
   margin-bottom: 5vw;
   position: relative;
@@ -273,6 +276,7 @@ nav .top button {
   margin: 5vw 0;
   gap: 5.5vw;
   position: relative;
+  height: 20vw;
 }
 
 .text-drop-line p {
@@ -309,7 +313,7 @@ nav .top button {
 
 .text-drop-line .drop-line {
   margin: 0;
-  height: 20vw;
+  height: 100%;
 }
 
 .card-header h3 {
