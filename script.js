@@ -1,3 +1,14 @@
+// Initialize Lenis
+const lenis = new Lenis();
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+raf();
+
 const navOpenButton = document.querySelector("nav .top button i");
 const nav = document.querySelector("nav");
 const OpenerDiv = document.querySelector(".nav-main");
@@ -164,20 +175,21 @@ letterAnimation = () => {
 // letterAnimation();
 
 const cardAnimation = () => {
-  document
-    .querySelectorAll(".text-drop-line .drop-line")
-    .forEach((line, index) => {
-      gsap.from(line, {
-        opacity: 0,
-        duration: 2,
-        scrollTrigger: {
-          trigger: line,
-          start: "top 85%",
-          end: "top 0%",
-          // toggleActions: "restart pause reset", //enable to rest animation on every scroll
-        },
-      });
+  const dropLine = document.querySelectorAll(".text-drop-line .drop-line");
+  dropLine.forEach((cont) => {
+    gsap.from(cont, {
+      height: 0,
+      duration: 2,
+      ease: "expo.out",
+      // ease: "elastic.out(1,0.5)",
+      scrollTrigger: {
+        trigger: cont,
+        start: "top 50%",
+        end: "top 20%",
+        scrub: 1,
+      },
     });
+  });
 
   const namer = document.querySelectorAll(".text-drop-line p");
   namer.forEach((cont) => {
@@ -186,11 +198,12 @@ const cardAnimation = () => {
       transform: "translateX(-10%)",
       duration: 2,
       ease: "expo.out",
-      ease: "elastic.out(1,0.5)",
+      // ease: "elastic.out(1,0.5)",
       scrollTrigger: {
         trigger: cont,
-        start: "top 85%",
-        end: "top 0%",
+        start: "top 80%",
+        end: "top 40%",
+        scrub: 1,
         // toggleActions: "restart pause reset", //enable to rest animation on every scroll
       },
     });
@@ -206,11 +219,22 @@ const cardAnimation = () => {
       ease: "circ.out",
       scrollTrigger: {
         trigger: cont,
-        start: "top 85%",
-        end: "top 0%",
+        start: "top 70%",
+        end: "top 50%",
+        scrub: 1,
         // toggleActions: "restart pause reset", //enable to rest animation on every scroll
       },
     });
   });
 };
 cardAnimation();
+
+const onTopReload = () => {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < 0) {
+      window.location.reload();
+    }
+  });
+};
+
+// onTopReload();
